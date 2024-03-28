@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Book = ({book}) => {
     return (
-        <div>
+        <div className='hover:w-96'>
            <Link to={`/book/${book.id}`}>
            <div className="justify-center items-center border rounded-lg p-6 border-gray-500 space-y-5">
                 <div className=" h-60 p-4 bg-gray-700 justify-center flex rounded-md">

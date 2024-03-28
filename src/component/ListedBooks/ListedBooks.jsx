@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChartLine, faChartColumn} from "@fortawesome/free-solid-svg-icons";
+
 
 import { useEffect, useState } from "react";
 import Chart from "./Chart";
@@ -18,7 +21,7 @@ const ListedBooks = () => {
 
   return (
     <div>
-      <h1 className="text-5xl text-center font-bold bg-gray-700 p-7"> Pages to read </h1>
+      <h1 className="text-5xl text-green-600  text-center font-bold bg-gray-700 p-7"><FontAwesomeIcon icon={faChartLine} /> Pages to read </h1>
       <div>
         <Outlet></Outlet>
       </div>

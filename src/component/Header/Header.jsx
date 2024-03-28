@@ -3,17 +3,17 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   const links = <>
       
-   <ul className="flex gap-6">
- <NavLink to="/"  className={({isActive}) => isActive ? 'text-red-600 font-bold btn' : 'font-bold btn'}>Home</NavLink>
- <NavLink to='/redFilter/onlyread' className={({isActive})=> isActive? 'text-red-600 font-bold btn' : 'font-bold btn'}>Listed Books</NavLink>
- <NavLink to="/chart"  className={({isActive})=> isActive ? 'text-red-600 font-bold btn' : 'font-bold btn'}>Pages to Read</NavLink>
+   <ul className="flex gap-6 ">
+ <NavLink to="/"  className={({isActive}) => isActive ? 'text-red-600 font-bold rounded-md px-4 py-2 bg-gray-950 ' : 'rounded-md font-bold px-4 py-2 bg-gray-900'}>Home</NavLink>
+ <NavLink to='/redFilter/onlyread' className={({isActive})=> isActive? ' rounded-md text-red-600 font-bold px-4 py-2 bg-gray-950 ' : 'rounded-md font-bold px-4 py-2 bg-gray-900'}>Listed Books</NavLink>
+ <NavLink to="/chart"  className={({isActive})=> isActive ? 'text-red-600 font-bold px-4 py-2 bg-gray-950 rounded-md' : 'rounded-md font-bold px-4 py-2 bg-gray-900'}>Pages to Read</NavLink>
 
    </ul>
     </>
 
 
   return (
-    <div>
+    <div className="">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -47,8 +47,8 @@ const Header = () => {
           <ul className="menu menu-horizontal items-center px-1">{links}</ul>
         </div>
         <div className="navbar-end flex gap-4">
-          <a className="btn bg-green-700">Sing In</a>
-          <a className="btn bg-blue-600">Sign Up</a>
+          <a className="px-4 py-2 rounded-md bg-green-700">Sing In</a>
+          <a className="px-4 py-2 rounded-md bg-blue-600">Sign Up</a>
         </div>
       </div>
     </div>

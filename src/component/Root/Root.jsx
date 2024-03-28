@@ -5,7 +5,12 @@ import Footer from "../Footter/Footer";
 const Root = () => {
     return (
         <div>
-            <Header></Header>
+          <div className="fixed w-[1280px]">
+          <Header></Header>
+          </div>
+          <div className="h-[80px]">
+
+          </div>
             
             <Outlet></Outlet>
 
