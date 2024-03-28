@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "bookName": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "image": "https://i.ibb.co/vDR3F4N/1200x1174.jpg",
+    "review": "A timeless classic portraying the American dream.",
+    "totalPages": 180,
+    "rating": 4.5,
+    "category": "Fiction",
+    "tags": ["Classic", "Romance"],
+    "publisher": "Scribner",
+    "yearOfPublishing": 1925
+  },
+  {
+    "id": 2,
+    "bookName": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "image": "https://i.ibb.co/5rzVLKP/OIP.jpg",
+    "review": "A powerful story of racial injustice and moral growth.",
+    "totalPages": 281,
+    "rating": 4.8,
+    "category": "Fiction",
+    "tags": ["Classic", "Social Justice"],
+    "publisher": "J. B. Lippincott & Co.",
+    "yearOfPublishing": 1960
+  },
+  {
+    "id": 3,
+    "bookName": "1984",
+    "author": "George Orwell",
+    "image": "https://i.ibb.co/TM13kFF/b82f16f9b9179d691f6b0df36782e8f9.jpg",
+    "review": "A dystopian novel that warns against totalitarianism.",
+    "totalPages": 328,
+    "rating": 4.6,
+    "category": "Fiction",
+    "tags": ["Dystopian", "Political"],
+    "publisher": "Secker & Warburg",
+    "yearOfPublishing": 1949
+  },
+  {
+    "id": 4,
+    "bookName": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "image": "https://i.ibb.co/XDD12T0/p159494-p-v10-ag.jpg",
+    "review": "A delightful romance set in the early 19th century.",
+    "totalPages": 279,
+    "rating": 4.7,
+    "category": "Fiction",
+    "tags": ["Romance", "Classic"],
+    "publisher": "T. Egerton, Whitehall",
+    "yearOfPublishing": 1813
+  },
+  {
+    "id": 5,
+    "bookName": "The Catcher in the Rye",
+    "author": "J. D. Salinger",
+    "image": "https://i.ibb.co/cJBNJdT/The-Catcher-in-the-Rye-by-J-D-Salinger.webp",
+    "review": "A coming-of-age novel with a rebellious protagonist.",
+    "totalPages": 224,
+    "rating": 4.4,
+    "category": "Fiction",
+    "tags": ["Coming-of-age", "Modern Classic"],
+    "publisher": "Little, Brown and Company",
+    "yearOfPublishing": 1951
+  },
+  {
+    "id": 6,
+    "bookName": "The Hobbit",
+    "author": "J. R. R. Tolkien",
+    "image": "https://i.ibb.co/0nm3Mjh/OIP.jpg",
+    "review": "An enchanting adventure in a fantasy world.",
+    "totalPages": 310,
+    "rating": 4.9,
+    "category": "Fantasy",
+    "tags": ["Adventure", "Middle Earth"],
+    "publisher": "George Allen & Unwin",
+    "yearOfPublishing": 1937
+  }
+]
