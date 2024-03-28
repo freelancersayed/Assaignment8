@@ -10,9 +10,14 @@ import ReadFilter from "./component/ReadDashbord/ReadFilter";
 import PageToRead from "./component/PageToRead/PageToRead";
 import WishList from "./component/WishList/WishList";
 import Chart from "./component/ListedBooks/Chart";
+import Error from "./component/Error/Error";
 // import BookFetch from './component/Book/BookFetch';
 
 const router = createBrowserRouter([
+  {
+    path: '*',
+    element: <Error></Error>
+  },
   {
     path: "/",
     element: <Root></Root>,
@@ -21,11 +26,6 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
-      // {
-      //   path: '/read',
-      //   element: <PageToRead></PageToRead>,
-      //   loader:()=>fetch('../public/Json.json'),
-      // },
       {
         path: "/book/:id",
         element: <BookDetails></BookDetails>,
@@ -59,17 +59,8 @@ const router = createBrowserRouter([
           },
         ],
       },
-
-      // {
-      //   path: '/book',
-      //   element: <BookFetch></BookFetch>
-      // },
     ],
   },
-  // {
-  //   path: '/red',
-  //   element: <PageToRead></PageToRead>
-  // }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
