@@ -9,6 +9,7 @@ import ListedBooks from "./component/ListedBooks/ListedBooks";
 import ReadFilter from "./component/ReadDashbord/ReadFilter";
 import PageToRead from "./component/PageToRead/PageToRead";
 import WishList from "./component/WishList/WishList";
+import Chart from "./component/ListedBooks/Chart";
 // import BookFetch from './component/Book/BookFetch';
 
 const router = createBrowserRouter([
@@ -34,6 +35,13 @@ const router = createBrowserRouter([
         path: "/chart",
         element: <ListedBooks></ListedBooks>,
         loader: () => fetch("../public/Json.json"),
+        children: [
+          {
+            index: true,
+            element: <Chart></Chart>,
+            loader: () => fetch("../public/Json.json"),
+          }
+        ]
       },
       {
         path: "/redFilter",

@@ -4,10 +4,8 @@ const Header = () => {
   const links = <>
       
    <ul className="flex gap-6">
-   <NavLink to="/"  className={({isActive}) => isActive ? 'text-red-600 font-bold btn' : 'font-bold btn'}>Home</NavLink>
- 
- <NavLink to='/redFilter' className={({isActive})=> isActive? 'text-red-600 font-bold btn' : 'font-bold btn'}>Listed Books</NavLink>
-
+ <NavLink to="/"  className={({isActive}) => isActive ? 'text-red-600 font-bold btn' : 'font-bold btn'}>Home</NavLink>
+ <NavLink to='/redFilter/onlyread' className={({isActive})=> isActive? 'text-red-600 font-bold btn' : 'font-bold btn'}>Listed Books</NavLink>
  <NavLink to="/chart"  className={({isActive})=> isActive ? 'text-red-600 font-bold btn' : 'font-bold btn'}>Pages to Read</NavLink>
 
    </ul>

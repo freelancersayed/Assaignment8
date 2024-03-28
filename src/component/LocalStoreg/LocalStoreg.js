@@ -24,15 +24,3 @@ if(!exists){
 
 export {getStoredBooks, saveBooks};
 
-
-// export const saveToLocalStorage = (data) => {
-//     const saveData = JSON.parse(localStorage.getItem("read") || []);
-//     const existsData = saveData.find((item) => item.id == data.id);
-//     if(!existsData){
-//         saveData.push(data);
-//         localStorage.setItem('read', JSON.stringify(saveData));
-//         alert(' added succesfully')
-//     }else{
-//         alert("alrady added");
-//     }
-// }
