@@ -34,7 +34,7 @@ const BookDetails = () => {
     if (!chack && !chacklis) {
       saveBooksWish(idInt);
     } else {
-      alert("alrady ace");
+      toast.error("Allrady Added!");
     }
 
     // if (storedBookIds.incudes(idInt)) {

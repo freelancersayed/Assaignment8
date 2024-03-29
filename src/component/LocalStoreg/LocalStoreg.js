@@ -16,8 +16,6 @@ if(!exists){
     storedBooks.push(id);
     localStorage.setItem('Bookslistread', JSON.stringify(storedBooks));
     toast.success("Added ReadList Succesfully")
-}else{
-    toast.error("Allrady Added!");
 }
 
 }
