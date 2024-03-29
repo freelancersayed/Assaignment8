@@ -48,9 +48,9 @@ const WishList = () => {
   }, []);
 
   return (
-    <div className="mt-10 my- ">
+    <div className="mt-10 ">
 
-<div className="flex   w-full justify-center">
+<div className="flex  w-full justify-center">
        <div className="flex justify-center -mt-40">
        <details className="dropdown text-center">
           <summary className="m-1 text-white px-10 rounded-box py-1 bg-green-500 font-bold">Short By</summary>

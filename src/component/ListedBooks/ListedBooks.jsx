@@ -5,15 +5,15 @@ import { faChartLine, faChartColumn} from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import Chart from "./Chart";
 import { Outlet, useLoaderData } from "react-router-dom";
-import { getStoredBooks, saveBooks } from "../LocalStoreg/LocalStoreg";
+// import { getStoredBooks, saveBooks } from "../LocalStoreg/LocalStoreg";
 
 // import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
 
 const ListedBooks = () => {
-    const [chart, setChart] = useState();
+    // const [chart, setChart] = useState();
 
-    const books = useLoaderData()
-    // setChart(books)
+    // const books = useLoaderData()
+    // // setChart(books)
 
 
 

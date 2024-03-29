@@ -2,7 +2,7 @@ import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
 const getStoredBooks = ()=>{
-    const storedBook = localStorage.getItem('Bookslist')
+    const storedBook = localStorage.getItem('Bookslistread')
     if(storedBook){
         return JSON.parse(storedBook);
     }
@@ -14,7 +14,7 @@ const storedBooks = getStoredBooks();
 const exists = storedBooks.find(bookId => bookId === id);
 if(!exists){
     storedBooks.push(id);
-    localStorage.setItem('Bookslist', JSON.stringify(storedBooks));
+    localStorage.setItem('Bookslistread', JSON.stringify(storedBooks));
     toast.success("Added ReadList Succesfully")
 }else{
     toast.error("Allrady Added!");

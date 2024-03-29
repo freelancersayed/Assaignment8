@@ -3,7 +3,10 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { getStoredBooks, saveBooks } from "../LocalStoreg/LocalStoreg";
-import { saveBooksWish } from "../LocalStoreg/LocalStoregWish";
+import {
+  getStoredBooksWish,
+  saveBooksWish,
+} from "../LocalStoreg/LocalStoregWish";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import { useState } from 'react';
@@ -18,16 +21,25 @@ const BookDetails = () => {
   // console.log(book);
 
   const storedBookIds = getStoredBooks();
+  const storedBookWishIds = getStoredBooksWish();
 
   const handleRead = () => {
     saveBooks(idInt);
   };
 
   const handleWish = () => {
-    saveBooksWish(idInt);
-    if (storedBookIds.incudes(idInt)) {
-      alert("kjf");
+    const chack = storedBookIds.find((book) => book == id);
+    const chacklis = storedBookWishIds.find((book) => book == id);
+    console.log(chack, chacklis);
+    if (!chack && !chacklis) {
+      saveBooksWish(idInt);
+    } else {
+      alert("alrady ace");
     }
+
+    // if (storedBookIds.incudes(idInt)) {
+    //   alert("kjf");
+    // }
   };
 
   return (
