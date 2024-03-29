@@ -12,6 +12,25 @@ import {
 const WishList = () => {
   const books = useLoaderData();
   const [wish, setWish] = useState([]);
+  const [displayRead, setDisplayRead] = useState([]);
+
+  const handleFilter = (filter) => {
+    if (filter === "Page") {
+      const pageNumber = wish.filter((page)=> page.totalPages)
+      const sortPage = pageNumber.sort((a, b)=> b.totalPages - a.totalPages)
+      setDisplayRead(sortPage);
+    } else if (filter === "Publis") {
+      const publisYear = wish.filter((publis) => publis.yearOfPublishing);
+      const sortPublis = publisYear.sort((a, b)=> b.yearOfPublishing - a.yearOfPublishing)
+      setDisplayRead(sortPublis);
+    }
+    else if(filter === "rating"){
+      const fil = wish.filter((book)=> book.rating)
+    const sortRating = fil.sort((a, b)=> b.rating - a.rating);
+    setDisplayRead(sortRating)
+    }
+  };
+
 
   useEffect(() => {
     const storedBookId = getStoredBooksWish();
@@ -24,13 +43,34 @@ const WishList = () => {
         }
       }
       setWish(bookApplied);
+      setDisplayRead(bookApplied);
     }
   }, []);
 
   return (
-    <div className="mt-4 my- ">
+    <div className="mt-10 my- ">
+
+<div className="flex   w-full justify-center">
+       <div className="flex justify-center -mt-40">
+       <details className="dropdown text-center">
+          <summary className="m-1 text-white px-10 rounded-box py-1 bg-green-500 font-bold">Short By</summary>
+          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-full text-center flex">
+            <li className="text-center" onClick={() => handleFilter("rating")}>
+              <a>Rating</a>
+            </li>
+            <li onClick={() => handleFilter("Page")}>
+              <a>Number of Pages</a>
+            </li>
+            <li onClick={() => handleFilter("Publis")}>
+              <a>Published Year</a>
+            </li>
+          </ul>
+        </details>
+       </div>
+      </div>
+
       <div>
-        {wish.map((wish) => (
+        {displayRead.map((wish) => (
           <div className="flex gap-4 bg-gray-700 mb-2 p-4 border rounded-lg p-2 ">
             <div className=" p-6 bg-gray-500 p-6  h-52 w-72 rounded-lg  justify-center flex">
               <img className="h-full" src={wish.image} alt="" />

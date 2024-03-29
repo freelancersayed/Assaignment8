@@ -4,9 +4,9 @@ const Header = () => {
   const links = <>
       
    <ul className="flex gap-6 ">
- <NavLink to="/"  className={({isActive}) => isActive ? 'text-red-600 font-bold rounded-md px-4 py-2 bg-gray-950 ' : 'rounded-md font-bold px-4 py-2 bg-gray-900'}>Home</NavLink>
- <NavLink to='/redFilter/onlyread' className={({isActive})=> isActive? ' rounded-md text-red-600 font-bold px-4 py-2 bg-gray-950 ' : 'rounded-md font-bold px-4 py-2 bg-gray-900'}>Listed Books</NavLink>
- <NavLink to="/chart"  className={({isActive})=> isActive ? 'text-red-600 font-bold px-4 py-2 bg-gray-950 rounded-md' : 'rounded-md font-bold px-4 py-2 bg-gray-900'}>Pages to Read</NavLink>
+ <NavLink to="/"  className={({isActive}) => isActive ? 'text-red-600 font-bold rounded-md px-4 py-2 hover:bg-black bg-gray-950 ' : 'hover:bg-black rounded-md font-bold px-4 py-2 bg-gray-900'}>Home</NavLink>
+ <NavLink to='/redFilter/onlyread' className={({isActive})=> isActive? ' rounded-md text-red-600 font-bold px-4 py-2 bg-gray-950 hover:bg-black ' : 'hover:bg-black rounded-md font-bold px-4 py-2 bg-gray-900'}>Listed Books</NavLink>
+ <NavLink to="/chart"  className={({isActive})=> isActive ? 'text-red-600 font-bold px-4 py-2 bg-gray-950 rounded-md hover:bg-black' : 'hover:bg-black rounded-md font-bold px-4 py-2 bg-gray-900'}>Pages to Read</NavLink>
 
    </ul>
     </>
@@ -33,15 +33,17 @@ const Header = () => {
                 />
               </svg>
             </div>
-            <ul
+           <div className="flex flex-col">
+           <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu  dropdown-content -mt-3 z-[1]  rounded-box w-52 "
             >
-              {links}
+             <li> {links}</li>
             </ul>
+           </div>
           </div>
 
-          <a className="btn btn-ghost text-xl">বই মেলা</a>
+          <a className="btn btn-ghost text-xl text-red-500">বই <span className="text-white">পড়</span></a>
         </div>
         <div className="navbar-center hedden lg:flex">
           <ul className="menu menu-horizontal items-center px-1">{links}</ul>

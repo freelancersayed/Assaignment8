@@ -13,6 +13,38 @@ const PageToRead = () => {
   const books = useLoaderData();
 
   const [read, setReadBooks] = useState([]);
+  const [displayRead, setDisplayRead] = useState([]);
+
+  // const [data, setData] = useState([]);
+  // const [rating, setRating] = useState([]);
+
+  const handleFilter = (filter) => {
+    if (filter === "Page") {
+      const pageNumber = read.filter((page)=> page.totalPages)
+      const sortPage = pageNumber.sort((a, b)=> b.totalPages - a.totalPages)
+      setDisplayRead(sortPage);
+    } else if (filter === "Publis") {
+      const publisYear = read.filter((publis) => publis.yearOfPublishing);
+      const sortPublis = publisYear.sort((a, b)=> b.yearOfPublishing - a.yearOfPublishing)
+      setDisplayRead(sortPublis);
+    }
+    else if(filter === "rating"){
+      const fil = read.filter((book)=> book.rating)
+    const sortRating = fil.sort((a, b)=> b.rating - a.rating);
+    setDisplayRead(sortRating)
+    }
+  };
+
+  // const handleRating = (filter) =>{
+  //   if(filter === "All"){
+  //     setRating(data)
+  //   }
+  // else if(filter === "rating"){
+  //   const fil = data.filter((book)=> book.rating === "rating")
+  //   const sortRating = fil.sort((a, b)=> b.rating - a.rating);
+  //   setRating(sortRating)
+  // }
+  // }
 
   useEffect(() => {
     const storedBookId = getStoredBooks();
@@ -26,14 +58,33 @@ const PageToRead = () => {
       }
       // console.log(books, storedBookId, bookApplied);
       setReadBooks(bookApplied);
+      setDisplayRead(bookApplied);
     }
   }, []);
 
   return (
-    <div>
+    <div className="mt-10">
+      <div className="flex  w-full ">
+       <div className="mx-auto  -mt-40">
+       <details className="dropdown ">
+          <summary className="m-1 text-white px-10 rounded-box py-1 bg-green-500 font-bold">Short By</summary>
+          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+            <li onClick={() => handleFilter("rating")}>
+              <a>Rating</a>
+            </li>
+            <li onClick={() => handleFilter("Page")}>
+              <a>Number of Pages</a>
+            </li>
+            <li onClick={() => handleFilter("Publis")}>
+              <a>Published Year</a>
+            </li>
+          </ul>
+        </details>
+       </div>
+      </div>
       <div className=" ">
         <div className="lg:flex flex-col mt-4  gap-4 ">
-          {read.map((read) => (
+          {displayRead.map((read) => (
             <div className="flex gap-4 bg-gray-700 mb-2 p-4 border rounded-lg p-2 ">
               <div className=" p-6 bg-gray-500 p-6  h-52 w-72 rounded-lg  justify-center flex">
                 <img className="h-full" src={read.image} alt="" />
